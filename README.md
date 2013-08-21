@@ -17,7 +17,7 @@ inside a line and some more things making text input more useful.
 
 1 - Text from STDIN
 ====================
-	We can make interactive CLI programs in PHP, where we ask the user
+We can make interactive CLI programs in PHP, where we ask the user
 for some information, this way:
 
 <?php
@@ -32,7 +32,7 @@ to BASH/DASH or similar stuff, and maybe we want some more options.
 
 2 - Installation
 =================
-	To start using CLIInput in your projects, just include or require the
+To start using CLIInput in your projects, just include or require the
 file CLIInput.class.php:
 
 <?php
@@ -44,7 +44,7 @@ wherever you want (some lib directory).
 
 3 - Using it
 ============
-	The simple way to start using CLIInput is installing it, creating a 
+The simple way to start using CLIInput is installing it, creating a 
 CLIInput object and then calling the read() method, this way:
 
 <?php
@@ -70,9 +70,9 @@ To make the texts longer. But be aware it is not compatible yet with multiline
 inputs, so we will get a weird result if the input string it too long and it
 requires some lines.
 
-	3.1 - Callbacks
+3.1 - Callbacks
 ========================
-	CLIInput is able to call external functions or methods when an event 
+CLIInput is able to call external functions or methods when an event 
 occurs, for example a key press. We may want this interact with our scripts, 
 to achieve better results, for example, implement completion to our input, when
 the user presses up or down keys (See key reference: 4)
@@ -129,9 +129,9 @@ or we can finish text input without a result (for skipping text fields):
 
 ?>
 
-	3.2 - Other options
+3.2 - Other options
 ============================
-	At this moment, other options are related to highlights. This class, can
+At this moment, other options are related to highlights. This class, can
 write some events where the text appears, like when we press the Insert key, the
 Escape key or we are deleting in an empty string. This argument is an array than 
 can contain these keys:
@@ -156,7 +156,7 @@ NULL value to callbacks argument.
 
 4 - Key reference
 ==================
-	These are the keys used in this class. All names are lowercase. Some are
+These are the keys used in this class. All names are lowercase. Some are
 self explanatory and doesn't have additional options (third arguments in callbacks),
 so I won't give more details:
 
@@ -180,7 +180,7 @@ so I won't give more details:
 
 5 - To-do
 ==========
-	There are always things to do with projects. But I have a little list:
+There are always things to do with projects. But I have a little list:
 
 	* Enable use of Ctrl+arrows to locate words
 	* Enable use of Ctrl+W to delete words
@@ -194,13 +194,13 @@ so I won't give more details:
 
 6 - Version
 ============
-	This is the first revision of the document, (20130821)
+This is the first revision of the document, (20130821)
 
 	This document belongs to CLIInput version 0.3
 
 7 - Updated information
 ========================
-	I will try to keep github updated, but I feel more comfortable publishing
+I will try to keep github updated, but I feel more comfortable publishing
 all changes in my projects blog: http://gaspar.totaki.com/ or explaining some
 parts of the code in http://totaki.com/poesiabinaria (in Spanish), so, you may 
 find the latest updated information there.
