@@ -194,7 +194,7 @@ class CLIInput
 	while (--$this->pos)
 	  echo "\033[D";
       }
-    echo "\033[s\033[1;1H".$this->pos." -- ".$oldPos."\033[u";
+    //    echo "\033[s\033[1;1H".$this->pos." -- ".$oldPos."\033[u";
     $this->doCallback('begin', array('oldPos' => $oldPos));
   }
 
@@ -419,7 +419,7 @@ class CLIInput
 	$this->goToPos(count($this->string));
 	/* while (++$this->pos<=count($this->string)) */
       }
-    echo "\033[s\033[1;1H".$this->pos."\033[u";
+    //    echo "\033[s\033[1;1H".$this->pos."\033[u";
     $this->doCallback('end', array('oldPos' => $oldPos));
   }
 
@@ -483,7 +483,7 @@ class CLIInput
       return;
 
     $newchar=ag($r, 0).ag($r, 1).ag($r, 2).ag($r, 3);
-    echo "\033[s\033[1;1H\033[K".$r."\033[u";
+    //    echo "\033[s\033[1;1H\033[K".$r."\033[u";
     if ( ($this->pos==count($this->string)) || (!$this->insert) )
       {
 	$this->string[$this->pos++]=$newchar;
