@@ -35,6 +35,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    * @date 20 ago 2012
    *
    * Changelog:
+   *  - 20150429 Cleans line before writing string on before
+   *             inserting strings. Highlight [ EMPTY ] if current
+   *             string length is 0, not if it becomes 0.
    *  - 20130820 Bug fixing
    *  - 20130819 Adding some comments
    *  - 20121010 Adding highlights
@@ -131,12 +134,21 @@ class CLIInput
   protected function insertString($str)
   {
     $this->goToBeginning();
+    $this->cleanLine();
     $this->string=array();
     for ($i=0; $i<strlen($str); $i++)
       $this->string[]=$str[$i];
 
     $this->pos = count($this->string);
     echo $this->getString(0);
+  }
+
+  /**
+   * Cleans current line
+   */
+  protected function cleanLine()
+  {
+    echo "\033[K";
   }
 
   /**
@@ -249,6 +261,8 @@ class CLIInput
   protected function key_backspace()
   {
     $oldPos = $this->pos;
+    $len = count($this->string);
+
     if ($this->pos>0)
       {
 	echo "\033[D\033[K\033[s";
@@ -257,7 +271,7 @@ class CLIInput
 	echo "\033[u";
       }
     $this->doCallback('backspace', array('oldPos' => $oldPos));
-    if (count($this->string)==0)
+    if ($len==0)
       $this->doHighlight('empty');
   }
 
