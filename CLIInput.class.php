@@ -35,6 +35,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    * @date 20 ago 2012
    *
    * Changelog:
+   *  - 20150513 Bug fixing. Inserting zeroes
    *  - 20150429 Cleans line before writing string on before
    *             inserting strings. Highlight [ EMPTY ] if current
    *             string length is 0, not if it becomes 0.
@@ -592,7 +593,7 @@ class CLIInput
 	  continue;
 
 	$r = fread(STDIN, 6);
-	if (!$r)		/* It won't happen */
+	if ($r === false)		/* It won't happen */
 	  continue;
 
 	$this->computeKey($r);
